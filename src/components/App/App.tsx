@@ -3,6 +3,7 @@ import CafeInfo from "../CafeInfo/CafeInfo";
 import VoteOptions from "../VoteOptions/VoteOptions";
 import { useState } from "react";
 import { type Votes, type VoteType } from "../../types/votes";
+import VoteStats from "../VoteStats/VoteStats";
 
 export default function App() {
   const [votes, setVotes] = useState<Votes>({ good: 0, neutral: 0, bad: 0 });
@@ -28,6 +29,7 @@ export default function App() {
           onReset={resetVotes}
           canReset={canReset}
         />
+        <VoteStats votes={votes} totalVotes={0} positiveRate={0} />
       </div>
     </>
   );
